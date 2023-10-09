@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "Todo-app",
+  "routes": [
+    {"src": "/(.*)", "dest": "/routes/" }
+  ]
+}
