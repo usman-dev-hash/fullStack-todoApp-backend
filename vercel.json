@@ -1,7 +1,18 @@
 {
   "version": 2,
-  "name": "Todo-app",
+  "builds": [
+    {
+      "src": "server.js", // Entry point of your Node.js app
+      "use": "@vercel/node" // Specify the Node.js runtime
+    }
+  ],
   "routes": [
-    {"src": "/", "dest": "/routes/todo.js" }
-  ]
+    {
+      "src": "/.*",
+      "dest": "/server.js" // Map all routes under /api to your Node.js app
+    }
+  ],
+  "env": {
+    "MONGODB_URL": "mongodb+srv://usmandev17:wbsw5C6ewxdSMFVw@localserver.rfhqtto.mongodb.net/new_todoapp?retryWrites=true&w=majority" // Define environment variables
+  }
 }
